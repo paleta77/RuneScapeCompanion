@@ -28,4 +28,14 @@ public class Result {
         }
         return list;
     }
+
+    public String[] toStringArray(){
+        String[] strings = new String[items.size()];
+        int i = 0;
+        for (Item item: items){
+            strings[i] = item.name;
+            i++;
+        }
+        return strings;
+    }
 }

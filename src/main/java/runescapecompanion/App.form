@@ -1,37 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="runescapecompanion.App">
-  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="bgPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="1089" height="439"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="61cfd" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <splitpane id="cbf54">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Button"/>
-        </properties>
-      </component>
-      <component id="2683a" class="javax.swing.JLabel" binding="label1">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="d61a1" class="javax.swing.JTextField" binding="textField1" default-binding="true">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
           </grid>
         </constraints>
-        <properties/>
-      </component>
+        <properties>
+          <dividerLocation value="125"/>
+          <dividerSize value="1"/>
+          <enabled value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="9dbad" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="56f86" class="javax.swing.JButton" binding="grandExchangeButton">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Grand Exchange"/>
+                </properties>
+              </component>
+              <component id="54ea0" class="javax.swing.JButton" binding="bestiaryButton">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Bestiary"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="2f0f5" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="7ff5d" class="javax.swing.JTextArea" binding="searchItemTextArea">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="20"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="71bb4" class="javax.swing.JButton" binding="searchButton">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Search"/>
+                </properties>
+              </component>
+              <component id="805ac" class="javax.swing.JComboBox" binding="searchItemCategoryComboBox">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="Miscellaneous"/>
+                    <item value="Ammo"/>
+                    <item value="Arrows"/>
+                    <item value="Bolts"/>
+                    <item value="Construction materials"/>
+                    <item value="Construction projects"/>
+                    <item value="Cooking ingredients"/>
+                    <item value="Costumes"/>
+                    <item value="Crafting materials"/>
+                    <item value="Familiars"/>
+                    <item value="Farming produce"/>
+                    <item value="Fletching materials"/>
+                    <item value="Food and drink"/>
+                    <item value="Herblore materials"/>
+                    <item value="Hunting equipment"/>
+                    <item value="Hunting produce"/>
+                    <item value="Jewellery"/>
+                    <item value="Mage armour"/>
+                    <item value="Mage weapons"/>
+                    <item value="Melee armour - low level"/>
+                    <item value="Melee armour - mid level"/>
+                    <item value="Melee armour - high level"/>
+                    <item value="Melee weapons - low level"/>
+                    <item value="Melee weapons - mid level"/>
+                    <item value="Melee weapons - high level"/>
+                    <item value="Mining and smithing"/>
+                    <item value="Potions"/>
+                    <item value="Prayer armour"/>
+                    <item value="Prayer materials"/>
+                    <item value="Range armour"/>
+                    <item value="Range weapons"/>
+                    <item value="Runecrafting"/>
+                    <item value="Runes, Spells and Teleports"/>
+                    <item value="Seeds"/>
+                    <item value="Summoning scrolls"/>
+                    <item value="Tools and containers"/>
+                    <item value="Woodcutting product"/>
+                    <item value="Pocket items"/>
+                  </model>
+                </properties>
+              </component>
+              <component id="55c93" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Category"/>
+                </properties>
+              </component>
+              <component id="a58e5" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <horizontalTextPosition value="0"/>
+                  <text value="Item name"/>
+                </properties>
+              </component>
+              <component id="fb3ba" class="javax.swing.JList" binding="list1" default-binding="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <model/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </splitpane>
     </children>
   </grid>
 </form>
