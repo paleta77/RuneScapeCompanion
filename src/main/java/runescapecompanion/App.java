@@ -9,8 +9,7 @@ import rsapi.Result;
 import rsapi.SearchEngine;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -26,8 +25,8 @@ public class App {
     private JTextArea searchItemTextArea;
     private JButton searchButton;
     private JComboBox searchItemCategoryComboBox;
-    private JList list1;
     private JTable table1;
+    private JLabel categoryLabel;
     private SearchEngine searchEngine = new SearchEngine();
 
     private void cena() throws IOException {
@@ -58,21 +57,50 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+                    //item search
                     Result result = searchEngine.searchItem(searchItemTextArea.getText(), Integer.toString(searchItemCategoryComboBox.getSelectedIndex()));
-                    String[] strings = result.toStringArray();
-                    list1.setListData(result.toStringArray());
+                    //table setup
+                    DefaultTableModel model = (DefaultTableModel) table1.getModel();
+                    model.setRowCount(0);
+                    model.setColumnCount(0);
+                    model.addColumn("Picture");
+                    model.addColumn("Name");
+                    model.addColumn("Price");
+                    table1.getColumnModel().getColumn(0).setCellRenderer(table1.getDefaultRenderer(ImageIcon.class));
+                    table1.setRowHeight(35);
+                    //table1.setValueAt(J);
+                    //populating table
+                    //String[] example = {"boots", "2m", "img"};
+                    //model.addRow(example);
+
+                    String[] itemDetails = new String[3];
+                    int i = 0;
+                    for(Item item: result.getItems()){
+                        itemDetails[0] = item.getIcon();
+                        itemDetails[1] = item.getName();
+                        itemDetails[2] = item.getPrice();
+                        model.addRow(itemDetails);
+                        ImageIcon icon = new ImageIcon(new URL(itemDetails[0]));
+                        categoryLabel.setIcon(icon);
+                        table1.setValueAt(icon, i++, 0);
+
+                    }
+                    //list1.setListData(result.toStringArray());
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
         });
 
-        list1.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
+    }
 
-            }
-        });
+    void tableSetUp(){
+        DefaultTableModel model = (DefaultTableModel) table1.getModel();
+        model.addColumn("name");
+        model.addColumn("price");
+        model.addColumn("img");
+        String[] example = {"boots", "2m", "img"};
+        model.addRow(example);
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
@@ -83,5 +111,9 @@ public class App {
         frame.pack();
         frame.setVisible(true);
         frame.setSize(800,350);
+    }
+
+    private void createUIComponents() {
+
     }
 }

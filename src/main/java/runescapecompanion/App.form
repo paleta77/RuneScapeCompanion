@@ -118,7 +118,7 @@
                   </model>
                 </properties>
               </component>
-              <component id="55c93" class="javax.swing.JLabel">
+              <component id="55c93" class="javax.swing.JLabel" binding="categoryLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -135,16 +135,19 @@
                   <text value="Item name"/>
                 </properties>
               </component>
-              <component id="fb3ba" class="javax.swing.JList" binding="list1" default-binding="true">
+              <scrollpane id="a5022">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties>
-                  <model/>
-                </properties>
-              </component>
+                <properties/>
+                <border type="none" title=""/>
+                <children>
+                  <component id="cc2fb" class="javax.swing.JTable" binding="table1" default-binding="true">
+                    <constraints/>
+                    <properties/>
+                  </component>
+                </children>
+              </scrollpane>
             </children>
           </grid>
         </children>

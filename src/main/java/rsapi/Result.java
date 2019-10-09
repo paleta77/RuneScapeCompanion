@@ -12,11 +12,15 @@ public class Result {
     @JsonProperty("items")
     List<Item> items;
 
+    public List<Item> getItems() {
+        return items;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         for(Item item: items){
-            stringBuilder.append(item.name+"\n");
+            stringBuilder.append(item.name).append("\n");
         }
         return stringBuilder.toString();
     }
